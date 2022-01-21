@@ -4,7 +4,7 @@ const Discord = require('discord.js'),
 config.cfg.intents = new Discord.Intents(config.cfg.intents);
     
 const bot = new Discord.Client(config.cfg);
-bot.login(config.token);
+bot.login(process.env.BOT_TOKEN);
 
 require('./events')(bot);
 
