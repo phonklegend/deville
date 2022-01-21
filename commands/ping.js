@@ -1,7 +1,7 @@
 module.exports = async (bot, message, args, argsF) => {
     
     message.channel.send({
-            content: "Ping: 0 ms"
+            content: "Ping: " + Math.ceil(Math.random()*4) + " ms"
         });
 
 };
