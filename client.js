@@ -2,9 +2,11 @@ const Discord = require('discord.js'),
     fs = require('fs'),
     config = require('./config.json');
 config.cfg.intents = new Discord.Intents(config.cfg.intents);
+const { Client, Intents } = require('discord.js');
+const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
     
 const bot = new Discord.Client(config.cfg);
-bot.login(process.env.BOT_TOKEN);
+bot.login(config.token);
 
 require('./events')(bot);
 
